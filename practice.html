@@ -4,9 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Set</title>
 </head>
 <body>
-    
+    <input type="text"/>
+    <button type="button">Add</button>
+    <br/>
+    <input type="text"/>
+    <button type="button">Search</button>
+    <h3></h3>
+    <br>
+    <input type="text"/>
+    <button type="button">Delete</button>
 </body>
+<script>
+    let input = document.getElementsByTagName("input")[0];
+    let btn = document.getElementsByTagName("button")[0];
+    let srcbtn = document.getElementsByTagName("button")[1];
+    let srcinput = document.getElementsByTagName("input")[1];
+    let result = document.getElementsByTagName("h3")[0];
+    let delinput = document.getElementsByTagName("input")[2];
+    let delbtn = document.getElementsByTagName("button")[2];
+    let names = new Set();
+    btn.addEventListener("click", function(){
+        let value = input.value;
+        names.add(value);
+        console.log(names);
+    })
+    delbtn.addEventListener("click",function(){
+        let delvalue = delinput.value;
+        names.delete(delvalue);
+    })
+    srcbtn.addEventListener("click", function(){
+        let srcvalue = srcinput.value;
+        if(names.has(srcvalue)){
+            result.innerHTML = "Found";
+        }else{
+            result.innerHTML = "Not Found";
+        }
+    })
+    let grades = new Set();
+    grades.add("A");
+    grades.add("B");
+    grades.add("C");
+    grades.add("D");
+    // console.log("grades");
+    // grades.delete("B");
+    // console.log(grades.has("D"));
+    // grades.forEach(function(value){
+    //     console.log(value)
+    // })
+</script>
 </html>
