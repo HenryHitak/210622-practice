@@ -1,0 +1,16 @@
+210622
+Broken Access Control - Matheus
+
+break access control of app authentication.
+authentication : access to verify user.
+how to prevent : may not use cell phone number, birthday, anything related to the personal data.
+
+Event
+how to do event, handle in JS.
+*important
+- event type
+- object
+
+Object creation - mid-term
+
+

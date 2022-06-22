@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" onfocus="hilighter(this,true);" onblur="hilighter(this,false);"/>
+    <input type="text" onfocus="hilighter(this,true);" onblur="hilighter(this,false);"/>
+    <input type="password"/>
+    <input type="textarea" onfocus="hilighter(this,true);" onfocus="hilighter(this,false);"/>
+    <button type="button" onclick="ch_type(this)">Click me!</button>
+    <button type="button">Click me!</button>
+    <button type="button">Click me!</button>
+    <button type="button">Click me!</button>
+</body>
+<script>
+    let passwordBox = document.getElementsByTagName("input")[2];
+    let datebtn = document.getElementsByTagName("button")[2];
+    let firstbtn = document.getElementsByTagName("button")[0];
+    let lastbtn = document.getElementsByTagName("button")[3];
+    lastbtn.addEventListener('click',function(event){
+        ch_type(event.target);
+    })
+    datebtn.addEventListener('click', function(event){
+        console.log(event);
+        var d  = Date();
+        alert(d.toString());
+    })
+    firstbtn.addEventListener("click", function(event){
+        btn_click(event.target);
+    })
+    function ch_type(btn){
+        if(passwordBox.type == "password"){
+            passwordBox.type = "text";
+            btn.innerHTML = "Hide the password";
+        }else {
+            passwordBox.type = "password";
+            btn.innerHTML = "Show the password";
+        }
+    }
+    // function ch_type(element, focus){
+    //     if(focus == true){
+    //         element.type = "text";
+    //     }else {
+    //         element.type = "password";
+    //     }
+    // }
+    function btn_click(element){
+        // alert("test");
+        if(element.innerHTML == "Click me!"){
+            element.innerHTML = "You Clicked Me!";
+        }else{
+            element.innerHTML = "Click me!";
+        }
+    }
+    function hilighter(element, focus){
+        if(focus==true){
+            element.style.backgroundColor = "yellow";
+            element.style.color = "red";
+        }else{
+            element.style.backgroundColor = "white";
+        }
+    }
+
+
+</script>
+</html>
