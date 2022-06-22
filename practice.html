@@ -34,6 +34,11 @@
     delbtn.addEventListener("click",function(){
         let delvalue = delinput.value;
         names.delete(delvalue);
+        if(names.has(delvalue)){
+            result.innerHTML = "";
+        }else{
+            result.innerHTML = "Gone";
+        }
     })
     srcbtn.addEventListener("click", function(){
         let srcvalue = srcinput.value;

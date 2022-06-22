@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+</head>
+<body>
+    <input type="text" placeholder="wirte the name"/>
+    <input type="text" placeholder="write the grade"/>
+    <button type="button">Add</button>
+    <input type="text"/>
+    <button type="button">Search</button>
+    <input type="text"/>
+    <button type="button">Delete</button>
+</body>
+<script>
+    let stuName = document.getElementsByTagName("input")[0];
+    let stuGrade = document.getElementsByTagName("input")[1];
+    let addbtn = document.getElementsByTagName("button")[0];
+    let srcinput = document.getElementsByTagName("input")[2];
+    let srcbtn = document.getElementsByTagName("button")[1];
+    let delinput = document.getElementsByTagName("input")[3];
+    let delbtn = document.getElementsByTagName("button")[2];
+    let students = new Map();
+    // students.set("Jose", 70);
+    // students.set("April", 65);
+    addbtn.addEventListener('click',function(){
+        let student = stuName.value;
+        let grade = stuGrade.value;
+        students.set(student, grade);
+        console.log(students);
+    })
+    // <!-- 2. Add another input box and a button and write a code to search for a key and show the value in an alert message if the exists and show not found in an alert if it doesn't.
+
+    srcbtn.addEventListener('click',function(){
+        let srcvalue = srcinput.value;
+        let srckey = stuGrade.value;
+        // let srckey = stuGrade.value;
+        if(students.has(srcvalue)){
+            alert("Exist");
+            // alert( = "Exist")
+        }else {
+            alert("Not Found");
+        }
+    })
+    // 3. Add another input box and a button and write a code to delete a key from the map. Show an appropriate message with an alert. -->
+    delbtn.addEventListener('click', function(){
+        let delvalue = delinput.value;
+        students.delete(delvalue);
+        students.has(delvalue);
+        alert(delvalue+" have been deleted!");
+        // else{
+        //     alert("Wrong Command!");
+        // }
+    })
+    // srcvalue.forEach(function(value,key){
+    //     btn.addEventListener("click",function(){
+    //         let addvalue = input1.input2;
+    //         students.set(addvalue);
+    //     })
+    // })
+    
+    // students.delete("Jose");
+    // console.log(sutdents.has("Jose"));
+    // console.log(students);
+    // console.log(students.get("April"));
+</script>
+</html>
